@@ -12,13 +12,18 @@ body {
 	transform: translate(-50%, -50%);
 
 	padding: 2em 2em;
+	text-align: center;
 
 	font-size: 3em;
 	font-family: monospace;
 	text-shadow: 5px 5px 5px #000;
 
 }
-.play:hover {
+.play {
 	cursor: pointer;
 	/*cursor: none;*/
+}
+#pause {
+	font-size: .5em;
+	display:none;
 }

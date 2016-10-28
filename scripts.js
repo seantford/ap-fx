@@ -64,10 +64,11 @@ $(".play").click( function(){
 	if (color === false) {
 		// console.log("color should be false here:  "+color+" triggering now");
 		setInterval(blastColor, 500);
-		// color = true;
+		color = true;
 		// console.log("just triggered, should now be true: "+color);
 		$(".song")[0].play();
-		$(".play").fadeOut(7500);
+		$("#pause").fadeIn(1000);
+		$(".play").fadeTo(7500, .15);
 	}
 
 });
@@ -122,9 +123,26 @@ function blastColor() {
 // setInterval(blastColor, 500);
 
 
-// $("body").click (function(){
-// 	$("playpause")
+
+//pause button displays after initial play is clicked
+//pause button fades out in 5000ms
+//pause button displays on click anywhere
+//pause button displays on hover over center
+
+
+//when body is clicked 
+//toggle display of play/pause
+
+// $("div").click(function(){
+// 	$(".playpause").show();
 // });
+
+
+//when play/pause is clicked
+//play/pause audio
+
+//input field for user email 
+//allows free download
 
 
 
