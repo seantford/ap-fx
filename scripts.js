@@ -57,18 +57,23 @@ var color = false;
 
 
 var audio = $(".song");
+var playing = false;
+var paused = false;
 
 $(".play").click( function(){
 	// console.log(color);
 	// bw = false;
 	if (color === false) {
 		// console.log("color should be false here:  "+color+" triggering now");
-		setInterval(blastColor, 500);
+		setInterval(blastColor, 50);
 		color = true;
 		// console.log("just triggered, should now be true: "+color);
 		$(".song")[0].play();
+		playing = true;
+		console.log("playing " + playing);
+		console.log("paused " + paused);
 		$("#pause").fadeIn(1000);
-		$(".play").fadeTo(7500, .15);
+		$(".play").fadeTo(15000, 0);
 	}
 
 });
@@ -133,9 +138,14 @@ function blastColor() {
 //when body is clicked 
 //toggle display of play/pause
 
-// $("div").click(function(){
-// 	$(".playpause").show();
-// });
+
+function hoverUp() {
+	$(".play").hover(function() {
+		$(".play").fadeTo(333, .75);
+	}, function(){
+		$(".play").fadeTo(333, 0);
+	});
+};
 
 
 //when play/pause is clicked
@@ -145,7 +155,7 @@ function blastColor() {
 //allows free download
 
 
-
+//photo slideshow
 
 
 
