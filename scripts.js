@@ -56,22 +56,31 @@ var color = false;
 // });
 
 
-var audio = $(".song");
+var audio = $(".song")[0];
 var playing = false;
 var paused = false;
 
 
 function pauser() {
-	if (playing=true) {
+	if (audio.paused=false) {
 		$(".play").click( function(){
-			audio[0].pause();
+			audio.pause();
 			$(".play").html("play");
-			playing = false;
-			paused = true;
+			// playing = false;
+			// paused = true;
+			// console.log("playing:" + playing + ", paused:" + paused);
+		});
+	}
+
+	if (audio.paused =true) {
+		$(".play").click( function(){
+			audio.play();
+			$(".play").html("pause");
+			playing = true;
+			paused = false;
 			console.log("playing:" + playing + ", paused:" + paused);
 		});
-	} 
-
+	}; 
 };
 
 function hoverUp() {
