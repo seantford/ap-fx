@@ -60,21 +60,57 @@ var audio = $(".song");
 var playing = false;
 var paused = false;
 
+
+function pauser() {
+	if (playing=true) {
+		$(".play").click( function(){
+			audio[0].pause();
+			$(".play").html("play");
+			playing = false;
+			paused = true;
+			console.log("playing:" + playing + ", paused:" + paused);
+		});
+	} 
+
+};
+
+function hoverUp() {
+	if (playing=true) {
+		$(".play").html("pause");
+	}
+	
+	if (playing = false){
+		$(".play").html("play");
+	}
+
+	$(".play").hover(function() {
+
+		
+		$(".play").fadeTo(333, 1);
+	}, function(){
+		$(".play").fadeTo(333, 0);
+	});
+
+};
+
+
 $(".play").click( function(){
 	// console.log(color);
 	// bw = false;
 	if (color === false) {
 		// console.log("color should be false here:  "+color+" triggering now");
-		setInterval(blastColor, 50);
+		setInterval(blastColor, 150);
 		color = true;
 		// console.log("just triggered, should now be true: "+color);
 		$(".song")[0].play();
 		playing = true;
 		console.log("playing " + playing);
 		console.log("paused " + paused);
-		$("#pause").fadeIn(1000);
-		$(".play").fadeTo(15000, 0);
+		hoverUp();
+		$(".play").fadeTo(1000, 0);
 	}
+	pauser();
+
 
 });
 
@@ -139,14 +175,6 @@ function blastColor() {
 //toggle display of play/pause
 
 
-function hoverUp() {
-	$(".play").hover(function() {
-		$(".play").fadeTo(333, .75);
-	}, function(){
-		$(".play").fadeTo(333, 0);
-	});
-};
-
 
 //when play/pause is clicked
 //play/pause audio
@@ -156,7 +184,7 @@ function hoverUp() {
 
 
 //photo slideshow
-
+//100x small divs with random flashing b/w for static effect?
 
 
 
